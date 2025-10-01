@@ -9,6 +9,8 @@ class TaskTracker {
     private:
         std::vector<Task> tasks;
         int nextId;
+
+        std::string getCurrentDateTime();
     
     public:
         TaskTracker();
