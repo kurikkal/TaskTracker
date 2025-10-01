@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(FinanceTracker VERSION 1.0.0 LANGUAGES CXX)
+project(TaskTracker VERSION 1.0.0 LANGUAGES CXX)
 
 # Use C++17
 set(CMAKE_CXX_STANDARD 17)
@@ -12,13 +12,13 @@ include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
 
 # Build executable
-add_executable(budget ${SOURCES})
+add_executable(tasktracker ${SOURCES})
 
 # -----------------------------
 # Install rules
 # -----------------------------
 # Executable goes to /usr/local/bin
-install(TARGETS budget
+install(TARGETS tasktracker
         RUNTIME DESTINATION bin)
 
 # Headers go to /usr/local/include
@@ -27,10 +27,10 @@ install(DIRECTORY include/ DESTINATION include)
 # -----------------------------
 # CPack configuration
 # -----------------------------
-set(CPACK_PACKAGE_NAME "FinanceTracker")
+set(CPACK_PACKAGE_NAME "TaskTracker")
 set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
 set(CPACK_PACKAGE_CONTACT "yadun.kurikalveed@example.com")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "A simple personal finance tracker in C++")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "A simple task tracker in C++")
 
 # DEB-specific metadata
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Yadun Kurikalveed <yadun.kurikalveed@example.com>")
