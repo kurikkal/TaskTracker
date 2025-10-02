@@ -9,8 +9,13 @@ class TaskTracker {
     private:
         std::vector<Task> tasks;
         int nextId;
+        const std::string taskFile;
 
         std::string getCurrentDateTime();
+        TaskStatus stringToStatus(const std::string& input);
+        std::string statusToString (const TaskStatus& input);
+        void saveTasksToFile();
+        std::vector<Task> loadTasksFromFile();
     
     public:
         TaskTracker();
@@ -20,6 +25,7 @@ class TaskTracker {
         void deleteTask(int id);
         void listTasks();
         void listTasksByStatus(const std::string& status);
+
 };
 
 #endif
